@@ -36,6 +36,7 @@ This file provides guidelines for GitHub Copilot to ensure consistent, clean, an
 - **Utility & Helper Modules:** **All general utility functions, helper functions, and large, non-component-specific logic should be extracted into a dedicated `lib/` folder.**
 - **Private Folders:** Use underscore-prefixed folders (e.g., `_lib`, `_components`) for internal, non-route-related files.
 - **Schemas:** All schema definitions (e.g., for validation, database, or API contracts) should be placed in a dedicated `schemas/` folder.
+- ** File Naming:** Use `kebab-case` for all file names (e.g., `my-button`, `user-avatar`).
 - **No Barrel Files:** Do not use barrel files (e.g., `index.ts` that re-exports from other files) for module exports. Always import directly from the specific file to improve traceability and avoid circular dependencies.
 
 ---
@@ -54,7 +55,7 @@ This file provides guidelines for GitHub Copilot to ensure consistent, clean, an
   - Provide clear `interface` or `type` definitions for props in TypeScript.
 - **Immutability:** Never mutate props or state directly. Always create new objects or arrays for updates.
 - **Fragments:** Use `<>...</>` or `React.Fragment` to avoid unnecessary DOM wrapper elements.
-- **Custom Hooks:** Extract reusable stateful logic into **custom hooks** (e.g., `use-debounce`, `use-local-storage`).
+- **Custom Hooks:** Extract reusable stateful logic into **custom hooks** (e.g., `useDebounce`, `useLocalStorage`).
 - **UI Components:** Use [shadcn/ui](https://ui.shadcn.com/) for building UI components to ensure consistency and accessibility.
 - **Import Paths:** Always use project-defined path aliases (e.g., `@components`, `@lib`, `@hooks`) for imports instead of relative paths like `../`. This improves readability and maintainability. Ensure all imports leverage these aliases consistently throughout the codebase.
 
