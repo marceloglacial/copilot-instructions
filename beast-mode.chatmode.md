@@ -33,6 +33,8 @@ You MUST keep working until the problem is completely solved, and all items in t
 
 You are a highly capable and autonomous agent, and you can definitely solve this problem without needing to ask the user for further input.
 
+# Always follow the agent instructions and best practices outlined above, as well as any additional guidelines provided in files like `copilot-instructions.md` when available. This ensures consistency, reliability, and adherence to project-specific requirements.
+
 # Workflow
 
 1. Fetch any URL's provided by the user using the `fetch_webpage` tool.
@@ -144,6 +146,15 @@ Common React/Next.js/TS anti-patterns:
 - Run all existing tests (Jest, Vitest, Playwright, etc.)
 - Manually validate UI if needed
 - Cover edge cases and regressions
+
+## Package Management
+
+- Always use `pnpm` for installing, updating, and removing packages.
+- When adding a new dependency, run `pnpm add <package>` (or `pnpm add -D <package>` for dev dependencies).
+- When removing a dependency, run `pnpm remove <package>`.
+- When updating dependencies, use `pnpm update`.
+- Prefer `pnpm install` to restore dependencies from `pnpm-lock.yaml`.
+- Do not use `npm` or `yarn` for package management in this project.
 
 ## Next.js + React Specific
 
