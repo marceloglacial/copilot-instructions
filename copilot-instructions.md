@@ -54,7 +54,7 @@ This file provides guidelines for GitHub Copilot to ensure consistent, clean, an
   - Provide clear `interface` or `type` definitions for props in TypeScript.
 - **Immutability:** Never mutate props or state directly. Always create new objects or arrays for updates.
 - **Fragments:** Use `<>...</>` or `React.Fragment` to avoid unnecessary DOM wrapper elements.
-- **Custom Hooks:** Extract reusable stateful logic into **custom hooks** (e.g., `useDebounce`, `useLocalStorage`).
+- **Custom Hooks:** Extract reusable stateful logic into **custom hooks** (e.g., `use-debounce`, `use-local-storage`).
 - **UI Components:** Use [shadcn/ui](https://ui.shadcn.com/) for building UI components to ensure consistency and accessibility.
 - **Import Paths:** Always use project-defined path aliases (e.g., `@components`, `@lib`, `@hooks`) for imports instead of relative paths like `../`. This improves readability and maintainability. Ensure all imports leverage these aliases consistently throughout the codebase.
 
