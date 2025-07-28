@@ -13,6 +13,7 @@ This file provides guidelines for GitHub Copilot to ensure consistent, clean, an
 - **Testable Code:** Design code to be easily testable.
 - **Package Management:** This project uses **pnpm** for managing dependencies. All package installations and scripts should use `pnpm` instead of `npm` or `yarn`.
 - **Documentation:** All principal documentation should be created in the `docs` folder.
+- **shadcn/ui Exception:** When using components from [shadcn/ui](https://ui.shadcn.com/) (located in `components/ui`), you may ignore the below rules regarding component structure, naming, and file organization. Use shadcn/ui components as documented, even if they do not fully align with these guidelines.
 
 ### General Guidelines
 
@@ -34,6 +35,7 @@ This file provides guidelines for GitHub Copilot to ensure consistent, clean, an
 - **Colocation:** Colocate component files (JSX/TSX, CSS Modules, tests) within a feature folder.
 - **Utility & Helper Modules:** **All general utility functions, helper functions, and large, non-component-specific logic should be extracted into a dedicated `lib/` folder.**
 - **Private Folders:** Use underscore-prefixed folders (e.g., `_lib`, `_components`) for internal, non-route-related files.
+- **Schemas:** All schema definitions (e.g., for validation, database, or API contracts) should be placed in a dedicated `schemas/` folder.
 - **No Barrel Files:** Do not use barrel files (e.g., `index.ts` that re-exports from other files) for module exports. Always import directly from the specific file to improve traceability and avoid circular dependencies.
 
 ---
@@ -54,6 +56,7 @@ This file provides guidelines for GitHub Copilot to ensure consistent, clean, an
 - **Fragments:** Use `<>...</>` or `React.Fragment` to avoid unnecessary DOM wrapper elements.
 - **Custom Hooks:** Extract reusable stateful logic into **custom hooks** (e.g., `useDebounce`, `useLocalStorage`).
 - **UI Components:** Use [shadcn/ui](https://ui.shadcn.com/) for building UI components to ensure consistency and accessibility.
+- **Import Paths:** Always use project-defined path aliases (e.g., `@components`, `@lib`, `@hooks`) for imports instead of relative paths like `../`. This improves readability and maintainability. Ensure all imports leverage these aliases consistently throughout the codebase.
 
 ### State Management
 
@@ -106,7 +109,8 @@ This file provides guidelines for GitHub Copilot to ensure consistent, clean, an
 
 - **Strict Mode:** Ensure `strict: true` is enabled in `tsconfig.json`.
 - **Type Definitions:** Provide accurate type definitions for API responses, props, and state.
-- **Type Organization:** When generating TypeScript types or interfaces in this project, always place them in the `types/` folder with a descriptive filename (e.g. `user.ts`, `post.ts`). Do not define types or interfaces inside components.
+- **Type Organization:** When generating TypeScript types or interfaces in this project, always place them in the `types/` folder with a descriptive definition filename (e.g. `user.d.ts`, `post.d.ts`). Do not define types or interfaces inside components.
+- **Type Imports:** Do not import types or interfaces into component or logic files. All types are defined in the `types/` folder and should be referenced directly by name.
 
 ---
 
